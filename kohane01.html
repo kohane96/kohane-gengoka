@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>こはね｜言語化力の強み</title>
+    
+    <!-- SNSでシェアされた時の設定（OGP） -->
+    <meta property="og:title" content="こはね｜言語化力の強みまとめ">
+    <meta property="og:description" content="感情を動かす“言語の粒度”を調整できる。こはねの言語化スキル・強みをまとめたポートフォリオです。">
+    <meta property="og:type" content="website">
+    <!-- 公開後に以下のURLを設定してください -->
+    <meta property="og:url" content=""> 
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Fonts: ゆるくて読みやすい丸ゴシック -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Base Variables --- */
+        :root {
+            /* 添付画像を参考にしたナチュラルカラー */
+            --color-bg: #FDFCF5;       /* 生成り色（ベース） */
+            --color-text: #5D4037;     /* 焦げ茶色（文字） */
+            --color-brown: #8D6E63;    /* 薄い茶色（枠線など） */
+            
+            --color-green: #DCE775;    /* 優しい若草色 */
+            --color-blue: #B3E5FC;     /* 淡い空色 */
+            --color-pink: #FFCCBC;     /* 優しいサーモンピンク */
+            --color-white: #FFFFFF;
+
+            --font-main: 'Zen Maru Gothic', sans-serif;
+            
+            --radius-soft: 15px;       /* 柔らかい角丸 */
+            --radius-hand: 255px 15px 225px 15px / 15px 225px 15px 255px; /* 手書き風の歪んだ丸 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #F0F4C3; /* 外側の背景（芝生色） */
+            color: var(--color-text);
+            line-height: 1.9;
+            -webkit-font-smoothing: antialiased;
+            /* 背景パターン（ドット） */
+            background-image: radial-gradient(#C5E1A5 20%, transparent 20%);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 500px; /* 少し細身にして絵本っぽく */
+            margin: 0 auto;
+            background-color: var(--color-bg);
+            min-height: 100vh;
+            overflow-x: hidden;
+            box-shadow: 0 0 20px rgba(93, 64, 55, 0.1);
+            position: relative;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--color-text);
+            letter-spacing: 0.05em;
+        }
+
+        /* 優しい強調（マーカー風） */
+        strong {
+            background: linear-gradient(transparent 70%, var(--color-green) 70%);
+            color: var(--color-text);
+            font-weight: 900;
+            padding: 0 4px;
+        }
+
+        .highlight-pink {
+            background: linear-gradient(transparent 70%, var(--color-pink) 70%);
+        }
+
+        /* --- Header (FV) --- */
+        .hero {
+            /* 空と草原のイメージ */
+            background: linear-gradient(180deg, var(--color-blue) 0%, var(--color-white) 90%);
+            padding: 60px 20px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 雲のあしらい */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: var(--color-bg);
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            transform: scaleX(1.5);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--color-white);
+            color: var(--color-text);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 2px dashed var(--color-brown); /* ステッチ風 */
+        }
+
+        .hero-title {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .hero-title span {
+            display: inline-block;
+            background: var(--color-green);
+            color: var(--color-text);
+            padding: 2px 10px;
+            border-radius: 10px 40px 20px 30px; /* 不規則な形 */
+            margin: 0 4px;
+            transform: rotate(-2deg);
+        }
+
+        .hero-name {
+            font-size: 1rem;
+            display: inline-block;
+            margin-top: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--color-brown);
+        }
+
+        /* --- Intro --- */
+        .intro {
+            padding: 20px 30px 40px;
+            text-align: center;
+        }
+
+        .intro p.catch-copy {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .intro-box {
+            background: var(--color-white);
+            border: 2px solid var(--color-text);
+            border-radius: var(--radius-soft);
+            padding: 24px;
+            margin-top: 20px;
+            position: relative;
+            /* 影をずらしてシールっぽく */
+            box-shadow: 4px 4px 0 var(--color-green);
+        }
+
+        .intro-box::before {
+            content: 'POINT';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-text);
+            color: var(--color-white);
+            padding: 2px 14px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* --- Strengths List --- */
+        .strengths {
+            padding: 40px 20px 60px;
+            background-color: #FFFDE7; /* 淡いクリーム色 */
+            position: relative;
+        }
+
+        /* 波線の区切り（上部） */
+        .strengths::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: radial-gradient(circle at 10px -5px, transparent 12px, #FFFDE7 13px);
+            background-size: 20px 20px;
+            transform: rotate(180deg);
+        }
+
+        .card {
+            background: var(--color-white);
+            border-radius: 20px;
+            padding: 30px 24px;
+            margin-bottom: 30px;
+            position: relative;
+            /* 柔らかい影 */
+            box-shadow: 0 5px 15px rgba(93, 64, 55, 0.08);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        /* ナンバリング：手書き風の丸 */
+        .card-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45px;
+            height: 45px;
+            background: var(--color-pink);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            border-radius: 50%; /* 綺麗な丸 */
+            border: 2px dashed var(--color-white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        /* 偶数番目は色を変える */
+        .card:nth-child(even) .card-number {
+            background: var(--color-green);
+        }
+
+        .card-title {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: var(--color-text);
+            padding-bottom: 10px;
+            background-image: linear-gradient(90deg, var(--color-text) 0%, var(--color-text) 50%, transparent 50%);
+            background-size: 8px 2px;
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+        .card-content {
+            font-size: 0.95rem;
+            color: var(--color-text);
+        }
+
+        .card-content ul {
+            background: #F5F5F5; /* 薄いグレー */
+            padding: 15px 15px 15px 35px;
+            border-radius: 10px;
+            margin-top: 15px;
+            list-style: none; /* デフォルト消す */
+        }
+        
+        .card-content li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .card-content li::before {
+            content: '●';
+            color: var(--color-brown);
+            position: absolute;
+            left: -20px;
+            font-size: 0.8rem;
+            top: 4px;
+        }
+
+        /* --- Summary Section --- */
+        .summary {
+            background-color: #D7CCC8; /* 淡いココア色 */
+            color: var(--color-text);
+            padding: 50px 24px;
+            text-align: center;
+            position: relative;
+        }
+        
+        /* 波線の区切り（上部） */
+        .summary::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: radial-gradient(circle at 10px -5px, transparent 12px, #D7CCC8 13px);
+            background-size: 20px 20px;
+            transform: rotate(180deg);
+        }
+
+        .summary-title {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            background: var(--color-white);
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 30px;
+        }
+
+        .skill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .skill-tag {
+            background: var(--color-bg);
+            color: var(--color-text);
+            border: 1px solid var(--color-text);
+            padding: 8px 16px;
+            border-radius: 12px 20px 15px 25px; /* 不規則な角丸 */
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .final-message {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: var(--color-white);
+            padding: 24px;
+            border-radius: 20px;
+            /* 手紙っぽい枠線 */
+            border: 4px double var(--color-pink);
+            line-height: 1.8;
+        }
+
+        /* --- CTA Button --- */
+        .cta-section {
+            padding: 50px 24px 80px;
+            text-align: center;
+            background: var(--color-bg);
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: var(--color-text);
+            color: var(--color-white);
+            text-decoration: none;
+            padding: 20px 0;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            /* 縫い目のような枠線 */
+            border: 2px dashed var(--color-white);
+            box-shadow: 0 0 0 4px var(--color-text); /* 二重線っぽく */
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-micro {
+            font-size: 0.85rem;
+            margin-top: 20px;
+            color: var(--color-brown);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--color-text);
+            color: var(--color-white);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.8rem;
+        }
+
+        /* --- Decorations (ゆるいイラスト風) --- */
+        .deco-circle {
+            width: 10px; height: 10px;
+            background: var(--color-green);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <span class="hero-badge">言語化力の強みまとめ</span>
+            <h1 class="hero-title">
+                感情を動かす<br>
+                <span>“言語の粒度”</span>を<br>
+                調整します
+            </h1>
+            <div class="hero-name">こはね</div>
+        </header>
+
+        <!-- Intro Section -->
+        <section class="intro">
+            <p class="catch-copy">
+                「1秒で伝わる言葉」<br>
+                「深く刺さる文章」<br>
+                「続きを読みたくなる余白」
+            </p>
+            <div class="intro-box">
+                <p style="margin:0; font-weight:700;">
+                    目的に合わせて<br>言葉の解像度と強度を<br>自在に調整します
+                </p>
+            </div>
+        </section>
+
+        <!-- Strengths Section -->
+        <section class="strengths">
+            
+            <!-- 1 -->
+            <div class="card">
+                <div class="card-number">01</div>
+                <h2 class="card-title">感情を動かす<br>“言語の粒度”調整</h2>
+                <div class="card-content">
+                    <p>サムネイル制作やLP設計の中で、目的に合わせて言葉の解像度と強度を自在に調整！</p>
+                    <p style="margin-top:15px;">数字・結果・恐怖・欲求など、感情トリガーへの理解が深く、<strong>“クリックさせる言葉選び”</strong>を体系化しています。</p>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="card">
+                <div class="card-number">02</div>
+                <h2 class="card-title">説明力＝<br>構造化できる力</h2>
+                <div class="card-content">
+                    <p>言葉を並べる前に、<strong>「誰の・どんな悩みを・どう解決するか」</strong>を常に構造化します。</p>
+                    <ul>
+                        <li>目的・前提・問題点</li>
+                        <li>伝える順番</li>
+                        <li>誘導設計</li>
+                    </ul>
+                    <p style="margin-top:10px;">これらを整理してから言語化するため、ズレのない提案が可能です。</p>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="card">
+                <div class="card-number">03</div>
+                <h2 class="card-title">“なぜ刺さるか”<br>再現性のある言語化</h2>
+                <div class="card-content">
+                    <p>私の言語化は「感覚」ではなく「根拠ベース」です。</p>
+                    <p style="margin-top:15px;">ABテスト・視線誘導・心理トリガーなど、言葉の効果を理論的に説明。クライアントに<strong class="highlight-pink">納得感ある提案</strong>ができる点が大きな武器です。</p>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="card">
+                <div class="card-number">04</div>
+                <h2 class="card-title">ユーザー行動を踏まえた<br>UX視点</h2>
+                <div class="card-content">
+                    <p>文字サイズ・読みやすさ・疑問の発生ポイントなど、ユーザー体験に寄り添った言語設計を重視。</p>
+                    <p style="margin-top:15px;">「左揃えのほうが読みやすい」「説明文を最初に大きく」など、<strong>実務と心理に基づいた言語化</strong>が強みです。</p>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="card">
+                <div class="card-number">05</div>
+                <h2 class="card-title">課題発見力が高い<br>深掘り質問の設計</h2>
+                <div class="card-content">
+                    <p>商談やヒアリングにおいて「仮説 → 質問」変換を積み重ね、相手の本質的な課題を引き出す“聞く力と言語化力”を持っています。</p>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="card">
+                <div class="card-number">06</div>
+                <h2 class="card-title">思考をアップデート<br>し続ける習慣</h2>
+                <div class="card-content">
+                    <p>トリガー図鑑、目線トリガーなど、体系化への姿勢を継続。<strong>「言語化を資産に変える」</strong>動きを続けており、研究者レベルの継続性があります。</p>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="card">
+                <div class="card-number">07</div>
+                <h2 class="card-title">抽象 → 具体 の<br>変換が得意</h2>
+                <div class="card-content">
+                    <p>抽象的な欲求や心理を、文章・図解・サムネコピー・LP構成など具体的なアウトプットに落とし込む力が高いです。</p>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="card">
+                <div class="card-number">08</div>
+                <h2 class="card-title">深み・共感・<br>納得感のある文章</h2>
+                <div class="card-content">
+                    <p>「続きを読みたい」と思わせる共感ベースの深い文章を作成。浅い言葉を嫌い、<strong class="highlight-pink">“本質が伝わる言語”</strong>にこだわり続けています。</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Summary Section -->
+        <section class="summary">
+            <h2 class="summary-title">言語化はスキルじゃなく<br>“武器”なんです</h2>
+            
+            <div class="skill-grid">
+                <span class="skill-tag">分析</span>
+                <span class="skill-tag">心理</span>
+                <span class="skill-tag">構造</span>
+                <span class="skill-tag">UX</span>
+                <span class="skill-tag">提案</span>
+                <span class="skill-tag">コピー</span>
+            </div>
+
+            <div class="final-message">
+                <p>私はこれら全てを「言語化」という軸で<br>束ねて扱える人です。</p>
+                <div style="margin-top:15px;">
+                    “言葉 × 構造 × 心理”<br>
+                    の三位一体スキル。<br>
+                    <span style="color:var(--color-brown); border-bottom:2px solid var(--color-green);">提案力に自信があります。</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <a href="#" class="cta-button">お問い合わせ・ご相談</a>
+            <p class="cta-micro">言葉と構造で、ビジネスを加速させます<span class="deco-circle"></span><span class="deco-circle"></span></p>
+        </div>
+
+        <footer>
+            &copy; Kohane
+        </footer>
+    </div>
+
+</body>
+</html>
