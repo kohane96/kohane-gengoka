@@ -5,37 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>こはね｜言語化力の強み</title>
     
-    <!-- SNSでシェアされた時の設定（OGP） -->
+    <!-- SNSシェア設定（OGP） -->
     <meta property="og:title" content="こはね｜言語化力の強みまとめ">
     <meta property="og:description" content="感情を動かす“言語の粒度”を調整できる。こはねの言語化スキル・強みをまとめたポートフォリオです。">
     <meta property="og:type" content="website">
-    <!-- 公開後に以下のURLを設定してください -->
     <meta property="og:url" content=""> 
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Google Fonts: ゆるくて読みやすい丸ゴシック -->
+    <!-- フォント: ゆるくて読みやすい丸ゴシック -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
     
+    <!-- アイコン: Lucide Icons (シンプルで丸みのあるアイコン) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
         /* --- Base Variables --- */
         :root {
-            /* 添付画像を参考にしたナチュラルカラー */
-            --color-bg: #FDFCF5;       /* 生成り色（ベース） */
-            --color-text: #5D4037;     /* 焦げ茶色（文字） */
-            --color-brown: #8D6E63;    /* 薄い茶色（枠線など） */
+            /* ナチュラルカラーパレット */
+            --color-bg: #FDFCF5;       /* 生成り色 */
+            --color-text: #5D4037;     /* 焦げ茶色 */
+            --color-brown-light: #8D6E63;
             
-            --color-green: #DCE775;    /* 優しい若草色 */
-            --color-blue: #B3E5FC;     /* 淡い空色 */
-            --color-pink: #FFCCBC;     /* 優しいサーモンピンク */
+            --color-green: #DCE775;    /* 若草色 */
+            --color-green-dark: #AFB42B;
+            --color-blue: #B3E5FC;     /* 空色 */
+            --color-blue-dark: #4FC3F7;
+            --color-pink: #FFCCBC;     /* サーモンピンク */
+            --color-pink-dark: #FF8A65;
             --color-white: #FFFFFF;
 
             --font-main: 'Zen Maru Gothic', sans-serif;
-            
-            --radius-soft: 15px;       /* 柔らかい角丸 */
-            --radius-hand: 255px 15px 225px 15px / 15px 225px 15px 255px; /* 手書き風の歪んだ丸 */
+            --radius-hand: 255px 15px 225px 15px / 15px 225px 15px 255px; /* 手書き風の歪み */
         }
 
         * {
@@ -46,22 +49,22 @@
 
         body {
             font-family: var(--font-main);
-            background-color: #F0F4C3; /* 外側の背景（芝生色） */
+            background-color: #F0F4C3;
             color: var(--color-text);
             line-height: 1.9;
             -webkit-font-smoothing: antialiased;
-            /* 背景パターン（ドット） */
+            /* 背景のドットパターン */
             background-image: radial-gradient(#C5E1A5 20%, transparent 20%);
-            background-size: 20px 20px;
+            background-size: 24px 24px;
         }
 
         .container {
-            max-width: 500px; /* 少し細身にして絵本っぽく */
+            max-width: 500px;
             margin: 0 auto;
             background-color: var(--color-bg);
             min-height: 100vh;
             overflow-x: hidden;
-            box-shadow: 0 0 20px rgba(93, 64, 55, 0.1);
+            box-shadow: 0 0 25px rgba(93, 64, 55, 0.15);
             position: relative;
         }
 
@@ -72,75 +75,79 @@
             letter-spacing: 0.05em;
         }
 
-        /* 優しい強調（マーカー風） */
         strong {
-            background: linear-gradient(transparent 70%, var(--color-green) 70%);
+            background: linear-gradient(transparent 65%, var(--color-green) 65%);
             color: var(--color-text);
             font-weight: 900;
             padding: 0 4px;
         }
 
         .highlight-pink {
-            background: linear-gradient(transparent 70%, var(--color-pink) 70%);
+            background: linear-gradient(transparent 65%, var(--color-pink) 65%);
         }
 
         /* --- Header (FV) --- */
         .hero {
-            /* 空と草原のイメージ */
             background: linear-gradient(180deg, var(--color-blue) 0%, var(--color-white) 90%);
-            padding: 60px 20px 50px;
+            padding: 70px 20px 50px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
         
-        /* 雲のあしらい */
+        /* 雲のような区切り線 */
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -20px;
-            left: 0;
-            width: 100%;
-            height: 40px;
+            bottom: -25px; left: -10%; width: 120%; height: 50px;
             background: var(--color-bg);
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-            transform: scaleX(1.5);
+            border-radius: 50%;
         }
 
+        /* 雲のアニメーションとスタイルを削除しました */
+
         .hero-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             background: var(--color-white);
             color: var(--color-text);
-            padding: 6px 18px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            border: 2px dashed var(--color-brown); /* ステッチ風 */
+            margin-bottom: 25px;
+            border: 2px dashed var(--color-brown-light);
+            box-shadow: 0 4px 0 rgba(0,0,0,0.05);
         }
 
         .hero-title {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.7rem;
+            margin-bottom: 25px;
             line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
         
         .hero-title span {
             display: inline-block;
             background: var(--color-green);
             color: var(--color-text);
-            padding: 2px 10px;
-            border-radius: 10px 40px 20px 30px; /* 不規則な形 */
+            padding: 4px 12px;
+            border-radius: var(--radius-hand);
             margin: 0 4px;
             transform: rotate(-2deg);
         }
 
         .hero-name {
-            font-size: 1rem;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
             margin-top: 10px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--color-brown);
+            padding: 5px 15px;
+            border-bottom: 3px solid var(--color-brown-light);
+            font-weight: 700;
         }
 
         /* --- Intro --- */
@@ -150,31 +157,29 @@
         }
 
         .intro p.catch-copy {
-            font-size: 1rem;
-            margin-bottom: 20px;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
             font-weight: 700;
+            line-height: 2;
         }
 
         .intro-box {
             background: var(--color-white);
             border: 2px solid var(--color-text);
-            border-radius: var(--radius-soft);
+            border-radius: 20px;
             padding: 24px;
             margin-top: 20px;
             position: relative;
-            /* 影をずらしてシールっぽく */
-            box-shadow: 4px 4px 0 var(--color-green);
+            box-shadow: 6px 6px 0 var(--color-green);
         }
 
         .intro-box::before {
             content: 'POINT';
             position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: -14px; left: 50%; transform: translateX(-50%);
             background: var(--color-text);
             color: var(--color-white);
-            padding: 2px 14px;
+            padding: 4px 16px;
             border-radius: 12px;
             font-size: 0.8rem;
             font-weight: 700;
@@ -182,120 +187,116 @@
 
         /* --- Strengths List --- */
         .strengths {
-            padding: 40px 20px 60px;
-            background-color: #FFFDE7; /* 淡いクリーム色 */
+            padding: 50px 20px 80px;
+            background-color: #FFFDE7;
             position: relative;
         }
-
-        /* 波線の区切り（上部） */
+        /* 波線（CSSグラデーションで表現） */
         .strengths::before {
             content: "";
-            position: absolute;
-            top: -20px;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: radial-gradient(circle at 10px -5px, transparent 12px, #FFFDE7 13px);
-            background-size: 20px 20px;
+            position: absolute; top: -15px; left: 0; width: 100%; height: 30px;
+            background: radial-gradient(circle at 15px 15px, transparent 15px, #FFFDE7 16px);
+            background-size: 30px 30px;
             transform: rotate(180deg);
         }
 
         .card {
             background: var(--color-white);
-            border-radius: 20px;
-            padding: 30px 24px;
-            margin-bottom: 30px;
+            border-radius: 24px;
+            padding: 40px 24px 30px; /* 上余白を増やしてアイコンスペース確保 */
+            margin-bottom: 40px;
             position: relative;
-            /* 柔らかい影 */
-            box-shadow: 0 5px 15px rgba(93, 64, 55, 0.08);
+            box-shadow: 0 8px 20px rgba(93, 64, 55, 0.08);
             border: 1px solid rgba(0,0,0,0.02);
         }
 
-        /* ナンバリング：手書き風の丸 */
-        .card-number {
+        /* アイコンバッジ（各カードのメインアイコン） */
+        .card-icon-badge {
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 45px;
-            height: 45px;
-            background: var(--color-pink);
-            color: var(--color-white);
+            top: -25px; left: 50%; transform: translateX(-50%);
+            width: 70px; height: 70px;
+            background: var(--color-white);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
-            font-size: 1.2rem;
-            border-radius: 50%; /* 綺麗な丸 */
-            border: 2px dashed var(--color-white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 4px solid var(--color-bg); /* 背景色と同じ色で縁取り */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            color: var(--color-text);
             z-index: 2;
         }
+        /* アイコン背景の色分け */
+        .card:nth-child(odd) .card-icon-badge { background: var(--color-pink); color: var(--color-white); }
+        .card:nth-child(even) .card-icon-badge { background: var(--color-green); color: var(--color-text); }
 
-        /* 偶数番目は色を変える */
-        .card:nth-child(even) .card-number {
-            background: var(--color-green);
+        .card-number {
+            position: absolute;
+            top: 20px; right: 20px;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #F0F0F0;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            z-index: 0;
+            line-height: 1;
         }
 
         .card-title {
             text-align: center;
-            font-size: 1.2rem;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            font-size: 1.25rem;
+            margin-top: 20px;
+            margin-bottom: 20px;
             color: var(--color-text);
-            padding-bottom: 10px;
-            background-image: linear-gradient(90deg, var(--color-text) 0%, var(--color-text) 50%, transparent 50%);
-            background-size: 8px 2px;
-            background-repeat: repeat-x;
+            position: relative;
+            z-index: 1;
+            /* 見出しと本文の間のドット線を追加 */
+            padding-bottom: 20px;
+            background-image: linear-gradient(to right, var(--color-brown-light) 33%, rgba(255,255,255,0) 0%);
             background-position: bottom;
+            background-size: 6px 2px;
+            background-repeat: repeat-x;
         }
-
+        
         .card-content {
             font-size: 0.95rem;
             color: var(--color-text);
+            position: relative;
+            z-index: 1;
         }
 
         .card-content ul {
-            background: #F5F5F5; /* 薄いグレー */
-            padding: 15px 15px 15px 35px;
-            border-radius: 10px;
+            background: #F8F8F8;
+            padding: 15px 15px 15px 15px;
+            border-radius: 12px;
             margin-top: 15px;
-            list-style: none; /* デフォルト消す */
+            list-style: none;
+            border-left: 5px solid var(--color-green);
         }
         
         .card-content li {
             margin-bottom: 8px;
-            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
         }
-        
-        .card-content li::before {
-            content: '●';
-            color: var(--color-brown);
-            position: absolute;
-            left: -20px;
-            font-size: 0.8rem;
-            top: 4px;
+        .card-content li svg {
+            min-width: 16px;
+            color: var(--color-green-dark);
+            margin-top: 4px;
         }
 
         /* --- Summary Section --- */
         .summary {
-            background-color: #D7CCC8; /* 淡いココア色 */
+            background-color: #D7CCC8;
             color: var(--color-text);
-            padding: 50px 24px;
+            padding: 60px 24px;
             text-align: center;
             position: relative;
         }
-        
-        /* 波線の区切り（上部） */
         .summary::before {
             content: "";
-            position: absolute;
-            top: -20px;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: radial-gradient(circle at 10px -5px, transparent 12px, #D7CCC8 13px);
-            background-size: 20px 20px;
+            position: absolute; top: -15px; left: 0; width: 100%; height: 30px;
+            background: radial-gradient(circle at 15px 15px, transparent 15px, #D7CCC8 16px);
+            background-size: 30px 30px;
             transform: rotate(180deg);
         }
 
@@ -304,8 +305,9 @@
             margin-bottom: 30px;
             background: var(--color-white);
             display: inline-block;
-            padding: 10px 24px;
+            padding: 12px 30px;
             border-radius: 30px;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.1);
         }
 
         .skill-grid {
@@ -319,22 +321,42 @@
         .skill-tag {
             background: var(--color-bg);
             color: var(--color-text);
-            border: 1px solid var(--color-text);
-            padding: 8px 16px;
-            border-radius: 12px 20px 15px 25px; /* 不規則な角丸 */
-            font-size: 0.9rem;
+            border: 2px solid var(--color-white);
+            padding: 8px 18px;
+            border-radius: var(--radius-hand);
+            font-size: 0.95rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
+        .skill-tag svg { width: 16px; height: 16px; }
 
         .final-message {
             font-size: 1.1rem;
             font-weight: 700;
             background: var(--color-white);
-            padding: 24px;
+            padding: 30px 24px;
             border-radius: 20px;
-            /* 手紙っぽい枠線 */
             border: 4px double var(--color-pink);
             line-height: 1.8;
+            position: relative;
+        }
+        /* ハンコ風のあしらい */
+        .final-message::after {
+            content: '自信アリ';
+            position: absolute;
+            bottom: -15px; right: -10px;
+            width: 70px; height: 70px;
+            background: var(--color-green);
+            color: var(--color-text);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 900;
+            transform: rotate(15deg);
+            border: 2px dashed var(--color-white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         /* --- CTA Button --- */
@@ -345,29 +367,32 @@
         }
 
         .cta-button {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             width: 100%;
             background: var(--color-text);
             color: var(--color-white);
             text-decoration: none;
-            padding: 20px 0;
+            padding: 22px 0;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
-            /* 縫い目のような枠線 */
+            font-size: 1.2rem;
             border: 2px dashed var(--color-white);
-            box-shadow: 0 0 0 4px var(--color-text); /* 二重線っぽく */
+            box-shadow: 0 0 0 4px var(--color-text);
             transition: transform 0.2s;
         }
         
         .cta-button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         .cta-micro {
-            font-size: 0.85rem;
-            margin-top: 20px;
-            color: var(--color-brown);
+            font-size: 0.9rem;
+            margin-top: 25px;
+            color: var(--color-brown-light);
+            font-weight: 700;
         }
 
         /* --- Footer --- */
@@ -375,18 +400,16 @@
             background-color: var(--color-text);
             color: var(--color-white);
             text-align: center;
-            padding: 30px 20px;
-            font-size: 0.8rem;
+            padding: 40px 20px;
+            font-size: 0.85rem;
         }
-
-        /* --- Decorations (ゆるいイラスト風) --- */
-        .deco-circle {
-            width: 10px; height: 10px;
-            background: var(--color-green);
-            border-radius: 50%;
-            display: inline-block;
-            margin: 0 5px;
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
         }
+        .footer-icons a { color: var(--color-white); }
 
     </style>
 </head>
@@ -395,13 +418,21 @@
     <div class="container">
         <!-- Hero Section -->
         <header class="hero">
-            <span class="hero-badge">言語化力の強みまとめ</span>
+            <!-- 雲のアイコンを削除しました -->
+
+            <div class="hero-badge">
+                <!-- 星のアイコンを削除しました -->
+                言語化力の強みまとめ
+            </div>
             <h1 class="hero-title">
                 感情を動かす<br>
                 <span>“言語の粒度”</span>を<br>
                 調整します
             </h1>
-            <div class="hero-name">こはね</div>
+            <div class="hero-name">
+                <i data-lucide="pen-tool" size="18"></i>
+                こはね
+            </div>
         </header>
 
         <!-- Intro Section -->
@@ -421,8 +452,11 @@
         <!-- Strengths Section -->
         <section class="strengths">
             
-            <!-- 1 -->
+            <!-- 1: 粒度調整 -->
             <div class="card">
+                <div class="card-icon-badge">
+                    <i data-lucide="sliders-horizontal" size="32"></i>
+                </div>
                 <div class="card-number">01</div>
                 <h2 class="card-title">感情を動かす<br>“言語の粒度”調整</h2>
                 <div class="card-content">
@@ -431,23 +465,29 @@
                 </div>
             </div>
 
-            <!-- 2 -->
+            <!-- 2: 構造化 -->
             <div class="card">
+                <div class="card-icon-badge">
+                    <i data-lucide="layers" size="32"></i>
+                </div>
                 <div class="card-number">02</div>
                 <h2 class="card-title">説明力＝<br>構造化できる力</h2>
                 <div class="card-content">
                     <p>言葉を並べる前に、<strong>「誰の・どんな悩みを・どう解決するか」</strong>を常に構造化します。</p>
                     <ul>
-                        <li>目的・前提・問題点</li>
-                        <li>伝える順番</li>
-                        <li>誘導設計</li>
+                        <li><i data-lucide="check" size="14"></i> 目的・前提・問題点</li>
+                        <li><i data-lucide="check" size="14"></i> 伝える順番</li>
+                        <li><i data-lucide="check" size="14"></i> 誘導設計</li>
                     </ul>
                     <p style="margin-top:10px;">これらを整理してから言語化するため、ズレのない提案が可能です。</p>
                 </div>
             </div>
 
-            <!-- 3 -->
+            <!-- 3: 再現性 -->
             <div class="card">
+                <div class="card-icon-badge">
+                    <i data-lucide="trending-up" size="32"></i>
+                </div>
                 <div class="card-number">03</div>
                 <h2 class="card-title">“なぜ刺さるか”<br>再現性のある言語化</h2>
                 <div class="card-content">
@@ -456,8 +496,11 @@
                 </div>
             </div>
 
-            <!-- 4 -->
+            <!-- 4: UX視点 -->
             <div class="card">
+                <div class="card-icon-badge">
+                    <i data-lucide="smartphone" size="32"></i>
+                </div>
                 <div class="card-number">04</div>
                 <h2 class="card-title">ユーザー行動を踏まえた<br>UX視点</h2>
                 <div class="card-content">
@@ -466,8 +509,11 @@
                 </div>
             </div>
 
-            <!-- 5 -->
+            <!-- 5: 課題発見 -->
             <div class="card">
+                <div class="card-icon-badge">
+                    <i data-lucide="search" size="32"></i>
+                </div>
                 <div class="card-number">05</div>
                 <h2 class="card-title">課題発見力が高い<br>深掘り質問の設計</h2>
                 <div class="card-content">
@@ -475,8 +521,11 @@
                 </div>
             </div>
 
-            <!-- 6 -->
+            <!-- 6: アップデート -->
             <div class="card">
+                <div class="card-icon-badge">
+                    <i data-lucide="refresh-ccw" size="32"></i>
+                </div>
                 <div class="card-number">06</div>
                 <h2 class="card-title">思考をアップデート<br>し続ける習慣</h2>
                 <div class="card-content">
@@ -484,8 +533,11 @@
                 </div>
             </div>
 
-            <!-- 7 -->
+            <!-- 7: 抽象具体 -->
             <div class="card">
+                <div class="card-icon-badge">
+                    <i data-lucide="lightbulb" size="32"></i>
+                </div>
                 <div class="card-number">07</div>
                 <h2 class="card-title">抽象 → 具体 の<br>変換が得意</h2>
                 <div class="card-content">
@@ -493,8 +545,11 @@
                 </div>
             </div>
 
-            <!-- 8 -->
+            <!-- 8: 共感文章 -->
             <div class="card">
+                <div class="card-icon-badge">
+                    <i data-lucide="heart-handshake" size="32"></i>
+                </div>
                 <div class="card-number">08</div>
                 <h2 class="card-title">深み・共感・<br>納得感のある文章</h2>
                 <div class="card-content">
@@ -509,12 +564,12 @@
             <h2 class="summary-title">言語化はスキルじゃなく<br>“武器”なんです</h2>
             
             <div class="skill-grid">
-                <span class="skill-tag">分析</span>
-                <span class="skill-tag">心理</span>
-                <span class="skill-tag">構造</span>
-                <span class="skill-tag">UX</span>
-                <span class="skill-tag">提案</span>
-                <span class="skill-tag">コピー</span>
+                <span class="skill-tag"><i data-lucide="bar-chart-2"></i> 分析</span>
+                <span class="skill-tag"><i data-lucide="smile"></i> 心理</span>
+                <span class="skill-tag"><i data-lucide="layout"></i> 構造</span>
+                <span class="skill-tag"><i data-lucide="mouse-pointer"></i> UX</span>
+                <span class="skill-tag"><i data-lucide="message-square"></i> 提案</span>
+                <span class="skill-tag"><i data-lucide="pen-tool"></i> コピー</span>
             </div>
 
             <div class="final-message">
@@ -522,21 +577,33 @@
                 <div style="margin-top:15px;">
                     “言葉 × 構造 × 心理”<br>
                     の三位一体スキル。<br>
-                    <span style="color:var(--color-brown); border-bottom:2px solid var(--color-green);">提案力に自信があります。</span>
+                    <span style="color:var(--color-brown-light); border-bottom:2px solid var(--color-green);">提案力に自信があります。</span>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
         <div class="cta-section">
-            <a href="#" class="cta-button">お問い合わせ・ご相談</a>
-            <p class="cta-micro">言葉と構造で、ビジネスを加速させます<span class="deco-circle"></span><span class="deco-circle"></span></p>
+            <a href="#" class="cta-button">
+                <i data-lucide="mail"></i>
+                お問い合わせ・ご相談
+            </a>
+            <p class="cta-micro">言葉と構造で、ビジネスを加速させます</p>
         </div>
 
         <footer>
+            <div class="footer-icons">
+                <!-- 必要であればSNSリンクをここに -->
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+            </div>
             &copy; Kohane
         </footer>
     </div>
 
+    <!-- アイコンを表示させるためのスクリプト -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
